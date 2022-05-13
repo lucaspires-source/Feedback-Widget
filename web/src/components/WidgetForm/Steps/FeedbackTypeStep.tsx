@@ -3,7 +3,7 @@ import { feedbackTypes, FeedbackType } from '..'
 import { CloseButton } from '../../CloseButton'
 
 interface FeedbackTypeStepProps {
-    onFeedbackTypeChange: (type: FeedbackType) => void
+    onFeedbackTypeChange: (type: FeedbackType) => void,
 }
 
 export default function FeedbackTypeStep({onFeedbackTypeChange} : FeedbackTypeStepProps) {
