@@ -29,7 +29,6 @@ export default function FeedbackContentStep({feedbackType, onFeedbackReset} : Fe
                     text-sm 
                     placeholder-zinc-400 
                     text-zinc-100
-                    border-1 
                     border-zinc-600 
                     bg-transparent 
                     rounded-md 
