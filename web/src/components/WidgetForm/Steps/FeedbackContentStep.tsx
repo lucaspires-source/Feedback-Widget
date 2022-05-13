@@ -36,7 +36,10 @@ export default function FeedbackContentStep({feedbackType, onFeedbackReset} : Fe
                     focus:ring-brand-500 
                     focus:ring-1 resize-none
                     focus:outline-none
-
+                    scrollbar
+                    scrollbar-thumb-zinc-700
+                    scrollbar-track-transparent
+                    scrollbar-thin
                     " 
                     placeholder="Conte com detalhes o que ocorreu"/>
         </form>
