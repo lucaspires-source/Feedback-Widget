@@ -1,5 +1,5 @@
 import { ArrowLeft, Camera } from "phosphor-react";
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { FeedbackType, feedbackTypes } from "..";
 import { CloseButton } from "../../CloseButton";
 import ScreenshotButton from "../ScreenshotButton";
@@ -15,6 +15,16 @@ export default function FeedbackContentStep({
 }: FeedbackContentStepProps) {
   const feedbackTypeData = feedbackTypes[feedbackType];
   const [screenshot, setScreenshot] = useState <string | null> (null);
+  const [comment, setComment ] = useState('')
+
+
+  function handleSubmitFeedback(event:FormEvent) {
+    event.preventDefault();
+    console.log({
+      screenshot,
+      comment
+    })
+  }
   return (
     <React.Fragment>
       <header>
@@ -35,7 +45,7 @@ export default function FeedbackContentStep({
         </span>
         <CloseButton />
       </header>
-      <form className="my-4 w-full">
+      <form onSubmit={handleSubmitFeedback} className="my-4 w-full">
         <textarea
           className="
                     min-w-[304px] 
@@ -57,6 +67,7 @@ export default function FeedbackContentStep({
                     scrollbar-thin
                     "
           placeholder="Conte com detalhes o que ocorreu"
+          onChange={(e) =>  setComment(e.target.value)}
         />
       <footer className=" flex gap-2 mt-1">
         <ScreenshotButton  onScreenshotTaken={setScreenshot} screenshot={screenshot} />
