@@ -46,7 +46,7 @@ export function WidgetForm() {
             <FeedbackContentStep  feedbackType={feedbackType} onFeedbackReset={handleRestartFeedback}/>
           )
         }
-      <footer className="text-xs text-neutral-400">
+      <footer className="text-xs text-neutral-400 mt-2">
         Feito por{" "}
         <a
           className="underline underline-offset-2"
