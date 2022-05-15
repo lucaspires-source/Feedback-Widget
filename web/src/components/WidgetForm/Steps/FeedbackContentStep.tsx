@@ -73,6 +73,7 @@ export default function FeedbackContentStep({
         <ScreenshotButton  onScreenshotTaken={setScreenshot} screenshot={screenshot} />
         <button
           type="submit"
+          disabled={comment.length === 0}
           className="p-2
              bg-brand-500
               rounded-md 
@@ -88,6 +89,8 @@ export default function FeedbackContentStep({
                 focus:ring-offset-2
                 focus:ring-offset-zinc-900
                 focus:ring-brand-500
+                disabled:opacity-50
+                disabled:hover:bg-brand-300
                 "
         >
           Enviar Feedback
