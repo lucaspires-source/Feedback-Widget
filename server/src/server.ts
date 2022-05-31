@@ -1,6 +1,6 @@
 import { prisma } from './prisma';
 import express from 'express';
-
+import nodemailer from 'nodemailer'
 const app = express();
 const PORT = process.env.PORT || 3333;
 
