@@ -1,5 +1,9 @@
 import { SubmitFeedbackUseCase } from "./submit-feedback-use-case";
-const submitFeedbackUseCase = new SubmitFeedbackUseCase({create: async () =>{} }, {sendMail: async () => {}});
+
+const createFeedbackSpy = jest.fn()
+const sendMailSpy = jest.fn()
+
+const submitFeedbackUseCase = new SubmitFeedbackUseCase({create:createFeedbackSpy }, {sendMail: sendMailSpy});
 describe('Submit Feedback', () =>{
     it('should be able to submit a feedback', async () =>{
        
@@ -9,6 +13,10 @@ describe('Submit Feedback', () =>{
             comment:"bugou demais",
             screenshot:'data:image/jpeg;base64,test.jpg'
         })).resolves.not.toThrow()
+
+
+        expect(createFeedbackSpy).toHaveBeenCalled()
+        expect(sendMailSpy).toHaveBeenCalled()
     })
 
 
@@ -40,6 +48,7 @@ describe('Submit Feedback', () =>{
             type:'BUG',
             comment:"",
             screenshot:'test.jpg'
+
         })).rejects.toThrow()
     })
 })
