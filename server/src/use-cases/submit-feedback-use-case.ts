@@ -19,9 +19,7 @@ export class SubmitFeedbackUseCase {
         if (!type || !comment) { 
             throw new Error('type and comment are required');
         }
-        if (screenshot && !screenshot.startsWith('data:image/jpeg;base64,')) {
-            throw new   Error('Invalid screenshot');
-        }
+
         await this.feedbacksRepository.create({
             type,
             comment,

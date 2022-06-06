@@ -42,13 +42,4 @@ describe('Submit Feedback', () =>{
     })
 
 
-    it('should not be able to submit a feedback with a invalid screenshot url', async () =>{
-    
-        await expect(submitFeedbackUseCase.execute({
-            type:'BUG',
-            comment:"",
-            screenshot:'test.jpg'
-
-        })).rejects.toThrow()
-    })
 })
